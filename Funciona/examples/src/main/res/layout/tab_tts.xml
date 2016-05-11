@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#E3F2FD">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+        <com.rey.material.widget.Spinner
+            android:id="@+id/spinnerModels"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:popupBackground="#E3F2FD"
+            style="@style/spinner_style"
+            android:clickable="false"
+            android:focusable="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="1. Record and edit your question"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/textView" />
+
+        <com.rey.material.widget.Button
+        android:id="@+id/buttonRecord"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerVoices"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_record_start"
+        android:onClick="startRecord"
+        android:text="Record"
+            android:fontFamily="sans-serif-light"
+        android:textColor="#FFFFFF"
+        android:textSize="14dp"
+        app:rd_enable="true"
+        />
+
+    <EditText
+        android:layout_width="332dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/watson_question_text"
+        android:layout_below="@+id/buttonRecord"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-light"
+        android:layout_gravity="center_horizontal" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="2. Ask Watson"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/textView2" />
+
+        <com.rey.material.widget.ImageButton
+        android:src="@drawable/pregunta"
+        android:background="@color/fondo"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+            android:fontFamily="sans-serif-light"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/askwatson"
+        android:id="@+id/watson_submit_button"
+        android:layout_below="@+id/watson_question_text"
+        app:rd_enable="true"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="3. See your answer"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="sans-serif-light"
+            android:id="@+id/textView3" />
+
+        <ScrollView
+        android:id="@+id/SCROLLER_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:fillViewport="true"
+        android:layout_above="@+id/button_SubmitTTS"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+            android:layout_centerHorizontal="true"
+        >
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/watson_answer_text"
+        android:textColor="#000000"
+        android:layout_below="@+id/watson_submit_button"
+        android:layout_above="@+id/button_SubmitTTS"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        />
+    </ScrollView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="4. Select language and play!"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/textView4" />
+
+        <com.rey.material.widget.Spinner
+
+            android:id="@+id/spinnerVoices"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:popupBackground="#E3F2FD"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-light"
+            android:layout_above="@+id/button_SubmitTTS"
+            android:minWidth="128dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            app:spn_label="Spinner with arrow"
+            app:rd_style="@style/Material.Drawable.Ripple.Wave"
+            style="@style/Material.Widget.Spinner"/>
+
+        <com.rey.material.widget.ImageButton
+            android:background="@color/fondo"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginBottom="16dp"
+
+            android:layout_below="@+id/watson_question_text"
+
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"
+
+
+            android:src="@drawable/video"
+
+        android:id="@+id/button_SubmitTTS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="playTTS"
+        android:text="Speak"
+        android:textColor="#FFFFFF"
+        android:textSize="14dp"
+        android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+        app:rd_enable="true"/>
+
+
+    </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
